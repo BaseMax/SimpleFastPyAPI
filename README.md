@@ -33,7 +33,7 @@ The application will start and be available at http://localhost:8000.
 
 ## API Endpoints
 
-- Retrieve a list of users:
+### Retrieve a list of users:
 
 ```http
 GET /users
@@ -41,14 +41,14 @@ GET /users
 
 Returns a list of all users in the system.
 
-- Retrieve details for a specific user:
+### Retrieve details for a specific user:
 
 ```http
 GET /users/{user_id}
 ```
 Returns details for a specific user with the given user_id.
 
-- Add a new user
+### Add a new user
 
 ```http
 POST /users
@@ -60,7 +60,7 @@ Adds a new user to the system. The request body should include a JSON object wit
   - `email` (string, required): the email address of the user
   - `password` (string, required): the password for the user
 
-- Update an existing user
+### Update an existing user
 ```http
 PUT /users/{user_id}
 ```
@@ -71,7 +71,7 @@ Updates an existing user with the given user_id. The request body should include
   -  `email` (string, optional): the new email address for the user
   -  `password` (string, optional): the new password for the user
 
-- Delete a user
+### Delete a user
 
 ```http
 DELETE /users/{user_id}
