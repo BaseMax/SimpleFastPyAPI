@@ -8,19 +8,23 @@ This is a simple REST API built with Python and FastAPI.
 
 Clone this repository to your local machine:
 ```bash
-git clone https://github.com/your-username/my-fastapi-project.git
+git clone https://github.com/BaseMax/SimpleFastPyAPI
 ```
+
 Change into the project directory:
+
 ```bash
 cd my-fastapi-project
 ```
 
 Install the project dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 Run the application:
+
 ```bash
 uvicorn main:app --reload
 ```
