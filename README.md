@@ -14,7 +14,7 @@ git clone https://github.com/BaseMax/SimpleFastPyAPI
 Change into the project directory:
 
 ```bash
-cd my-fastapi-project
+cd SimpleFastPyAPI
 ```
 
 Install the project dependencies:
