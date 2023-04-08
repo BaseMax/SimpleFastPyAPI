@@ -1,7 +1,5 @@
 # Simple FastAPI Py
 
-Building a Simple REST API with Python and FastAPI
-
 ## My Awesome FastAPI Project
 
 This is a simple REST API built with Python and FastAPI.
