@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-from .routers.user import user_router
+from .routers.user import router
 from .database import engine
 
 
 app = FastAPI()
 
-app.include_router(user_router)
+app.include_router(router)
 
 #===========================#
 
