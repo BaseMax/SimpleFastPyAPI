@@ -1,23 +1,11 @@
-from pydantic import BaseModel
-from .database import Base
-from sqlalchemy import Column, String
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
 
-class UserCreate(BaseModel):
-    name: str
-    email: str
-    password: str
-    
 
-class UserUpdate(BaseModel):
-    name: str
-    email: str
-    password: str
-    
-
+Base = declarative_base()
 class User(Base):
     __tablename__ = "users"
-    
-    id = Column(primary_key=True)
-    name = Column(String, nullable=False)
-    email = Column(String, nullable=False)
-    password = Column(String, nullable=False)
+    id: int = Column(Integer, primary_key=True, index=True)
+    name: str = Column(String(50), index=True)
+    email: str = Column(String(50), unique=True, index=True)
+    password: str = Column(String(50))

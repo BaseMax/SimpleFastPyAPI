@@ -1,19 +1,49 @@
-from fastapi import FastAPI
-from .routers.user import router
-from .database import engine
+from fastapi import FastAPI, HTTPException, Depends
+from sqlalchemy.orm import Session
+from database import get_db
+from models import User
+from schema import UserCreate, UserUpdate
+
 
 
 app = FastAPI()
 
-app.include_router(router)
 
-#===========================#
+@app.get("/users/")
+def get_all_users(db: Session = Depends(get_db)):
+    return db.query(User).all()
 
-@app.on_event("startup")
-async def startup():
-    await engine.connect()
-    
+@app.get("/users/{user_id}")
+def get_user_by_email(user_id: int, db: Session = Depends(get_db)):
+    user = db.query(User).filter(User.id == user_id).first()
+    if user:
+        return user
+    raise HTTPException(status_code=404, detail="User not found")
 
-@app.on_event("shutdown")
-async def shutdown():
-    await engine.disconnect()
+
+@app.post("/users/")
+def create_user(user: UserCreate, db: Session = Depends(get_db)):
+    db_user = User(name=user.name, email=user.email, password=user.password)
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
+
+@app.put("/users/{user_id}")
+def update_user_by_email(user_id: int, user: UserUpdate, db: Session = Depends(get_db)):
+    db_user = db.query(User).filter(User.id == user_id).first()
+    if not db_user:
+        raise HTTPException(status_code=404, detail="User not found")
+    db_user.name = user.name
+    db_user.email = user.email
+    db.commit()
+    return {"message": "User updated successfully"}
+
+@app.delete("/users/{user_id}")
+def delete_user_by_email(user_id: int, db: Session = Depends(get_db)):
+    db_user = db.query(User).filter(User.id == user_id).first()
+    if not db_user:
+        raise HTTPException(status_code=404, detail="User not found")
+    db.delete(db_user)
+    db.commit()
+    return {"message": "User deleted successfully"}
