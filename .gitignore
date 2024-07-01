@@ -1,4 +1,8 @@
-/__pycache__
+__pycache__
 /app/__pycache__
-/venv
+venv
 .env
+allure-results
+.vscode
+report.html
+.pytest_cache

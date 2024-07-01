@@ -1,0 +1,29 @@
+{
+  "getUsers": "",
+  "getUserByID": "",
+  "getUserWrongID": "",
+  "getUserWrongType": "",
+
+  "addUser": {
+    "name": "Roni",
+    "password": "skeleton",
+    "email": "skeleton-roni@gmail.com"
+  },
+
+  "deleteUser": "",
+  "updateUser": {
+    "name": "udin",
+    "email": "ahmadi@gmail.com",
+    "password": "4321"
+  },
+  "updateUserCleanup": {
+    "name": "ali",
+    "email": "ahmadi@gmail.com",
+    "password": "1234"
+  },
+  "deleteUserSetup": {
+    "name": "Sikiwil",
+    "password": "12345667",
+    "email": "sikiwil@gmail.com"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "host": "http://127.0.0.1:8000",
+  "headers": {"Accept":"application/json","Content-Type":"application/json"},
+  "getUsers": "/users",
+  "getUserByID": "/users/3",
+  "getUserWrongID": "/users/9999",
+  "getUserWrongType": "/users/dsadsaf",
+
+  "addUser": "/users",
+  "deleteUser": "/users/5",
+  "updateUser": "/users/4",
+  "wrongUpdateUser": "/users/9999",
+  "notFoundDeleteUser": "/users/9999"
+}

@@ -1,0 +1,77 @@
+{
+  "getUsers": [
+    {
+      "id": 1,
+      "name": "Alice",
+      "email": "alice@example.com",
+      "password": "password1"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "email": "bob@example.com",
+      "password": "password2"
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "email": "charlie@example.com",
+      "password": "password3"
+    },
+    {
+      "id": 4,
+      "name": "ali",
+      "email": "ahmadi@gmail.com",
+      "password": "1234"
+    }
+  ],
+  "getUserByID": {
+    "id": 3,
+    "name": "Charlie",
+    "email": "charlie@example.com",
+    "password": "password3"
+  },
+  "getUserWrongID": {
+    "detail": "User not found"
+  },
+  "getUserWrongType": {
+    "detail": [
+      {
+        "loc": [
+          "path",
+          "user_id"
+        ],
+        "msg": "value is not a valid integer",
+        "type": "type_error.integer"
+      }
+    ]
+  },
+
+  "addUser": {
+    "name": "Roni",
+    "email": "skeleton-roni@gmail.com",
+    "password": "skeleton"
+  },
+
+  "deleteUser": {
+    "message": "User deleted successfully"
+  },
+
+  "notFoundDeleteUser": {
+    "detail": "User not found"
+  },
+
+  "updateUser": {
+    "message": "User updated successfully"
+  },
+
+  "deleteUserSetup": {
+    "name": "Sikiwil",
+    "password": "12345667",
+    "email": "sikiwil@gmail.com"
+  },
+
+  "wrongUpdateUser": {
+    "detail": "User not found"
+  }
+}
