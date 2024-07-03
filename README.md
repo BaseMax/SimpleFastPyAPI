@@ -63,7 +63,6 @@ Make sure to run the application first (leave it run), then execute this command
 pipenv run pytest tests
 ```
 
-Example of pytest execution result
 ![Example of pytest execution result](images/pytest_execution_result.png?raw=true "pytest execution result")
 
 ### Serve allure report
@@ -72,7 +71,6 @@ Example of pytest execution result
 allure serve allure-results
 ```
 
-Example of allure reports
 ![Example of allure report](images/allure_report.png?raw=true "allure report")
 
 ## Jenkins in Docker
@@ -124,7 +122,6 @@ docker compose up -d
 
 You can then access jenkins master url, set new job, reuse the Jenkinsfile that I have created in this repo
 
-Example of jenkins result
 ![Example of jenkins result](images/successful_pipeline_jenkins.png?raw=true "jenkins result")
 
 You can stop it with command
