@@ -1,0 +1,32 @@
+services:
+  jenkins-master:
+    image: jenkins/jenkins:2.464-jdk17
+    ports:
+      - 8080:8080
+    environment:
+      - JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
+    volumes:
+      - type: bind
+        source: ./jenkins_master
+        target: /var/jenkins_home
+    networks:
+      - jenkins
+    restart: on-failure
+  
+  jenkins-slave:
+    image: jenkins-agent:latest
+    depends_on:
+      - jenkins-master
+    environment:
+      JENKINS_WEB_SOCKET: "true"
+      JENKINS_URL: "http://jenkins-master:8080"
+      JENKINS_SECRET: "xxx"
+      JENKINS_AGENT_NAME: "agent-1"
+    init: true
+    restart: on-failure
+    networks:
+      - jenkins
+    
+networks:
+  # The presence of these objects is sufficient to define them
+  jenkins: {}
