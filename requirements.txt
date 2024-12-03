@@ -20,7 +20,7 @@ orjson==3.9.15
 psycopg2-binary==2.9.6
 pydantic==1.10.13
 python-dotenv==1.0.0
-python-multipart==0.0.7
+python-multipart==0.0.18
 PyYAML==6.0
 requests==2.32.0
 rfc3986==1.5.0
