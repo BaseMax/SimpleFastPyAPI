@@ -21,13 +21,13 @@ cd SimpleFastPyAPI
 Install the project dependencies:
 
 ```bash
-pip install -r requirements.txt
+docker build -t SimpleFastPyAPI .
 ```
 
 Run the application:
 
 ```bash
-uvicorn main:app --reload
+docker run -p 8000:8000 -v $(pwd)/users.db:/app/users.db SimpleFastPyAPI
 ```
 
 The application will start and be available at http://localhost:8000.
